@@ -644,7 +644,7 @@ form button:hover {
 
   .foto3 {
     bottom: 1.0625rem; /* 17px */
-    left: 1rem; /* 16px */
+    left: 5rem; /* 16px */
     transform: translateX(-50%);
   }
 }
