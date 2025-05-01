@@ -1,0 +1,650 @@
+/* RESET Y AJUSTES BASE */
+* {
+  box-sizing: border-box;   /* Esto garantiza que el padding y el border se incluyan en el tamaño total de los elementos */
+  margin: 0;   /* Elimina el margen por defecto de los elementos */
+  padding: 0;   /* Elimina el padding por defecto de los elementos */
+}
+
+html {
+  scroll-behavior: smooth;   /* Habilita el desplazamiento suave en toda la página */
+}
+
+/* ESTILOS GENERALES */
+body {
+  background-color: black;   /* Color de fondo oscuro para todo el cuerpo */
+  color: rgb(225, 218, 218);   /* Color de texto gris claro */
+  text-align: center;   /* Alineación del texto al centro */
+  font-family: "Barlow", sans-serif;   /* Establece la fuente del cuerpo */
+}
+
+/* ENCABEZADO PRINCIPAL */
+header h1 {
+  font-family: 'Trebuchet MS', sans-serif;   /* Fuente para el título */
+  font-size: 20px;   /* Tamaño de la fuente */
+  margin: 40px 70px 40px 0;   /* Márgenes alrededor del título */
+  letter-spacing: 4px;   /* Espaciado entre las letras */
+}
+
+/* MENÚ DE NAVEGACIÓN */
+nav {
+  color: rgb(225, 218, 218);   /* Color del texto del menú */
+  font-family: 'Playfair Display';   /* Fuente para los elementos del menú */
+  font-size: 25px;   /* Tamaño de la fuente en el menú */
+  margin: 60px 40px 45px auto;   /* Márgenes en el menú */
+  max-width: 95%;   /* El menú no puede exceder el 95% del ancho de la pantalla */
+  display: flex;   /* Utiliza flexbox para organizar los elementos */
+  align-items: center;   /* Alinea los elementos al centro verticalmente */
+  justify-content: center;   /* Centra el contenido horizontalmente */
+  flex-wrap: wrap;   /* Permite que los elementos se envuelvan en el contenedor */
+}
+
+/* Estilo de los enlaces del menú */
+nav a.menu {
+  position: relative;   /* Posiciona el enlace de manera relativa */
+  margin: 0 30px;   /* Márgenes en los enlaces */
+  text-decoration: none;   /* Elimina el subrayado de los enlaces */
+  color: rgb(225, 218, 218);   /* Color de los enlaces */
+  font-family: 'Playfair Display', serif;   /* Fuente para los enlaces */
+  font-size: 25px;   /* Tamaño de la fuente */
+  font-weight: 600;   /* Grosor de la fuente */
+  transition: 0.5s;   /* Transición suave al cambiar de estado */
+}
+
+/* Efecto de línea en el menú */
+nav a.menu:before {
+  content: '';   /* Crea un contenido vacío para la pseudo-elemento */
+  position: absolute;   /* Posición absoluta para que no afecte al diseño del contenido */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid rgb(225, 218, 218);   /* Línea superior */
+  border-bottom: 2px solid rgb(225, 218, 218);   /* Línea inferior */
+  transform: scaleY(2);   /* Aumenta la escala en el eje Y */
+  opacity: 0;   /* Hace que la línea no sea visible */
+  transition: .3s;   /* Suaviza la transición de la línea */
+}
+
+/* Efecto de fondo en el menú */
+nav a.menu:after {
+  content: '';   /* Crea un contenido vacío para la pseudo-elemento */
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(225, 218, 218);   /* Fondo del enlace */
+  transform: scaleY(0);   /* Hace que el fondo no se vea */
+  opacity: 0;   /* Hace que el fondo no sea visible */
+  transition: .3s;   /* Suaviza la transición del fondo */
+  z-index: -1;   /* Coloca el fondo detrás del texto */
+}
+
+/* Cambio de color al hacer hover */
+nav a.menu:hover {
+  color: black;   /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Efecto hover: línea y fondo */
+nav a.menu:hover:before {
+  transform: scaleY(1);   /* La línea se expande al pasar el mouse */
+  opacity: 1;   /* La línea se hace visible */
+}
+
+nav a.menu:hover:after {
+  transform: scaleY(1);   /* El fondo se expande al pasar el mouse */
+  opacity: 1;   /* El fondo se hace visible */
+}
+
+/* LOGO EN EL MENÚ */
+nav img.Logo {
+  width: 120px;   /* Establece el ancho del logo */
+  height: auto;   /* Mantiene la relación de aspecto del logo */
+  vertical-align: middle;   /* Alinea el logo verticalmente */
+  margin: 0 15px;   /* Márgenes alrededor del logo */
+  transition: transform 0.3s ease;   /* Transición suave para el efecto de escala */
+}
+
+/* Efecto de escala en el logo */
+nav img.Logo:hover {
+  transform: scale(1.45);   /* Aumenta el tamaño del logo al hacer hover */
+}
+
+/* IMAGEN DE FONDO PRINCIPAL */
+#Fondo {
+  background-image: url('imagenes_generales/Fondo 2.png');   /* Establece la imagen de fondo */
+  background-size: cover;   /* Asegura que la imagen cubra toda el área */
+  background-position: center;   /* Centra la imagen de fondo */
+  height: 100vh;   /* Establece la altura a 100% de la vista */
+  width: 100%;   /* Establece el ancho a 100% */
+  max-width: 97%;   /* Asegura que no se exceda el 97% del ancho */
+  margin: 45px auto 150px;   
+  position: relative; /* Añadimos position relative para contener elementos absolutos si los hubiera */
+  overflow: hidden; /* Importante: Oculta cualquier parte de la imagen que sobresalga */
+}
+
+/* SECCIONES */
+section {
+  margin: 10px 0;   /* Márgenes entre secciones */
+}
+
+section h2 {
+  font-size: 30px;   /* Tamaño de fuente de los títulos */
+  font-family: 'Playfair Display', serif;   /* Fuente de los títulos */
+  margin-bottom: 20px;   /* Márgenes inferiores en los títulos */
+  color: black;   /* Color de los títulos */
+}
+
+section p {
+  font-size: 18px;   /* Tamaño de fuente de los párrafos */
+  line-height: 1.6;   /* Altura de línea para mejorar la legibilidad */
+  max-width: 1200px;   /* Ancho máximo de los párrafos */
+  margin: 10px auto;   /* Centra los párrafos */
+  color: black;   /* Color de los párrafos */
+}
+
+/* SECCIÓN DE INICIO */
+#inicio {
+  min-height: 100vh;   /* Altura mínima de la sección */
+  background-color: rgb(225, 218, 218);   /* Color de fondo */
+  margin-top: 25px;   /* Margen superior */
+  border-left: 70px solid black;   /* Borde izquierdo */
+  border-right: 70px solid black;   /* Borde derecho */
+}
+
+/* INTRODUCCIÓN */
+.intro {
+  text-align: center;   /* Alineación del texto */
+  color: black;   /* Color del texto */
+  max-width: 1200px;   /* Ancho máximo de la sección */
+  margin: -100px auto 15px auto;;   /* Centra el contenido, me ha quedado asi por ajustar el texto después  */
+  padding: 20px 0px 15px 0px;   /* Añade relleno */
+}
+
+.intro p {
+  font-size: 22px;   /* Tamaño de los párrafos */
+  line-height: 1.6;   /* Altura de línea */
+  margin: 0 0 15px 0;   /* Márgenes en los párrafos */
+  color: black;   /* Color del texto */
+}
+
+.intro span {
+  display: block;   /* Hace que el texto se muestre en bloque */
+  font-family: 'Playfair Display';   /* Fuente del texto */
+  font-size: 35px;   /* Tamaño de fuente */
+  font-weight: bold;   /* Peso de la fuente */
+  letter-spacing: 2px;   /* Espaciado entre las letras */
+  color: black;   /* Color del texto */
+  margin-top: 30px;   /* Margen superior */
+  margin-bottom: 40px;   /* Margen inferior */
+}
+
+/* Estilos para las imágenes en secciones */
+#paisajes img,
+#animales img,
+#historias img {
+  display: block; /* Para que la imagen ocupe todo el ancho disponible de su contenedor */
+  width: 97%; /* Haz que la imagen sea responsive dentro de su sección */
+  height: 400px; /* Mantiene la proporción de la imagen */
+  margin-bottom: 20px; /* Añade un espacio entre la imagen y el título */
+  margin-left: 20px;
+  margin-right: 20px;
+  object-fit: cover; 
+}
+
+/* Ajustes específicos para secciones */
+.inicio1 a { /* Debido a que Inicio lo meti despues, he tenido que hacer este ajuste */
+  top:-130px;
+}
+
+.inicio1 {
+  margin-top: 50px;
+  margin-bottom: 70px; 
+}
+
+.paisaje1 {
+  margin-top: 70px;
+  margin-bottom: 90px; 
+}
+
+.animales1 {
+  margin-top: 70px;
+  margin-bottom: 85px;
+}
+
+.historia1 {
+  margin-top: 55px;
+  margin-bottom: 95px;
+}
+
+.top-mirada1 {
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+.contacto1 {
+  margin-top: 75px;
+  margin-bottom: 80px;
+
+}
+
+/* Estilos para enlaces especiales */
+.inicio1 a.menu, 
+.paisaje1 a.menu,
+.animales1 a.menu,
+.historia1 a.menu,
+.top-mirada1 a.menu,
+.contacto1 a.menu {
+  position: relative;   /* Posiciona el enlace de manera relativa */
+  margin: 0 30px 50px 30px;    /* Márgenes en los enlaces */
+  text-decoration: none;   /* Elimina el subrayado de los enlaces */
+  color: rgb(225, 218, 218);   /* Color de los enlaces */
+  font-family: 'Playfair Display', serif;   /* Fuente para los enlaces */
+  font-size: 35px;   /* Tamaño de la fuente */
+  font-weight: 700;   /* Grosor de la fuente */
+  transition: 0.5s;   /* Transición suave al cambiar de estado */
+}
+
+/* Efectos hover para enlaces especiales */
+.inicio1 a.menu:before,
+.paisaje1 a.menu:before,
+.animales1 a.menu:before,
+.historia1 a.menu:before,
+.top-mirada1 a.menu:before, 
+.contacto1 a.menu:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 2px solid rgb(225, 218, 218);   /* Línea superior */
+  border-bottom: 2px solid rgb(225, 218, 218);   /* Línea inferior */
+  transform: scaleY(2);   /* Aumenta la escala en el eje Y */
+  opacity: 0;   /* Hace que la línea no sea visible */
+  transition: .3s;   /* Suaviza la transición de la línea */
+}
+
+.inicio1 a.menu:after,
+.paisaje1 a.menu:after,
+.animales1 a.menu:after,
+.historia1 a.menu:after,
+.top-mirada1 a.menu:after,
+.contacto1 a.menu:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(225, 218, 218);   /* Fondo del enlace */
+  transform: scaleY(0);   /* Hace que el fondo no se vea */
+  opacity: 0;   /* Hace que el fondo no sea visible */
+  transition: .3s;   /* Suaviza la transición del fondo */
+  z-index: -1;   /* Coloca el fondo detrás del texto */
+}
+
+.inicio1 a.menu:hover,
+.paisaje1 a.menu:hover,
+.animales1 a.menu:hover,
+.historia1 a.menu:hover,
+.top-mirada1 a.menu:hover,
+.contacto1 a.menu:hover {
+  color: black;   /* Cambia el color del texto al pasar el mouse */
+}
+
+.inicio1 a.menu:hover:before,
+.paisaje1 a.menu:hover:before,
+.animales1 a.menu:hover:before,
+.historia1 a.menu:hover:before,
+.top-mirada1 a.menu:hover:before,
+.contacto1 a.menu:hover:before {
+  transform: scaleY(1);   /* La línea se expande al pasar el mouse */
+  opacity: 1;   /* La línea se hace visible */
+}
+
+.inicio1 a.menu:hover:after,
+.paisaje1 a.menu:hover:after,
+.animales1 a.menu:hover:after,
+.historia1 a.menu:hover:after,
+.top-mirada1 a.menu:hover:after,
+.contacto1 a.menu:hover:after {
+  transform: scaleY(1);   /* El fondo se expande al pasar el mouse */
+  opacity: 1;   /* El fondo se hace visible */
+}
+
+/* GALERÍA GRID */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
+  gap: 10px; /* Espacio entre las imágenes */
+  width: 97%; /* Ancho del contenedor */
+  margin: 20px auto; /* Centrado y margen */
+}
+
+.galeria-grid img {
+  width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+  height: auto; /* Altura automática */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+  object-position: top; 
+}
+
+/*GALERIA TOP*/
+
+.galeria-top {
+  display: grid;
+  grid-template-columns: 1fr; /* Una imagen por fila */
+  gap: 10px; /* Espacio entre las imágenes */
+  max-width: 100%; /* Para asegurarse de que no sobrepase el contenedor */
+  margin: 0 auto; /* Centra la galería */
+}
+
+.galeria-top img {
+  width: 100%; /* Se adapta al ancho del contenedor */
+  height: auto; /* Mantiene la proporción de las imágenes */
+  object-fit: cover; /* Asegura que las imágenes se ajusten bien sin distorsionarse */
+  max-width: 600px; /* Controla el tamaño máximo de la imagen para evitar que sea demasiado grande */
+  margin: 0 auto; /* Centra las imágenes en el contenedor */
+}
+
+form {
+  font-size: 1.4em; /* Puedes ajustar este valor según te guste */
+}
+
+form select,
+form option {
+  font-size: 0.7em;
+}
+
+/* BOTÓN FLOTANTE */
+.boton-flotante {
+  position: fixed;   /* Posicionamiento fijo en la pantalla */
+  bottom: 20px;   /* Ubicación en la parte inferior */
+  right: 20px;   /* Ubicación en la parte derecha */
+  padding: 10px 20px;   /* Relleno interno del botón */
+  background-color: black;   /* Color de fondo */
+  color: white;   /* Color del texto */
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.boton-flotante:hover {
+  background-color: rgb(225, 218, 218);
+  transform: scale(1.1);
+  color: black;
+}
+
+
+/*Instagram*/
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: black;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+footer p {
+  margin-bottom: 15px; /* espacio entre frases */
+}
+
+.insta-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.insta-icon:hover {
+  transform: scale(1.2);
+}
+/* Ajuste de textos */
+.galeria-top {
+  position: relative; /* Necesario para posicionar los span dentro */
+}
+
+.texto {
+  position: absolute; /* Para que floten sobre la galería */
+  color: white; 
+  background-color: black; /* Fondo semitransparente, opcional */
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 200px; /* Para que el texto no sea muy ancho */
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+/* Texto sobre las fotos top-miradas. */
+.foto1 {
+  top: 3%; 
+  left: 7%;
+}
+
+.foto2 {
+  top: 40%; 
+  right: 9%;
+}
+
+.foto3 {
+  bottom: 12%; 
+  left: 15%;
+  transform: translateX(-50%);
+}
+
+//* ACCESIBILIDAD */
+nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado */
+  outline: 0.125rem solid white; /* 2px */
+}
+
+/* DISEÑO RESPONSIVE */
+
+/* Pantallas pequeñas (hasta 600px) */
+@media (max-width: 37.5rem) { /* 600px */
+  nav {
+    font-size: 1.25rem; /* 20px */
+    flex-direction: column;
+    margin: 1.25rem auto; /* 20px */
+  }
+
+  nav a.menu {
+    margin: 0.625rem 0; /* 10px */
+  }
+
+  nav img.Logo {
+    width: 5rem; /* 80px */
+    margin: 0.625rem 0; /* 10px */
+  }
+
+  #Fondo {
+    height: auto;
+    max-width: 100%;
+    margin: 1.25rem auto 0; /* 20px auto 0 */
+  }
+
+  section h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  section p {
+    font-size: 1rem; /* 16px */
+  }
+
+@media (max-width: 37.5rem) {
+  .intro {
+    font-size: 1rem;            /* Ajusta el tamaño de la fuente */
+    line-height: 1.6;           /* Mantiene la altura de línea */
+    overflow-wrap: break-word;  /* Permite que el texto largo se divida */
+    word-break: break-word;     /* Fuerza el salto de línea cuando sea necesario */
+    hyphens: none;              /* Desactiva la hifenización */
+    padding: 1rem;              /* Ajusta el padding para no quedar pegado */
+    width: 100%;                /* Asegura que el contenido ocupe el 100% del ancho */
+    margin: 0 auto;             /* Centra el contenido */
+  }
+  
+  .intro p, .intro span {
+    display: block;             /* Asegura que el texto se muestre como bloque */
+    width: 100%;                /* Ajusta el ancho al 100% */
+    font-size: 1rem;            /* Ajusta el tamaño de la fuente */
+    text-align: justify;        /* Justifica el texto */
+    word-wrap: break-word;      /* Permite saltos de línea en palabras largas */
+  }
+  
+  }
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paisaje1 a.menu,
+  .animales1 a.menu,
+  .historia1 a.menu,
+  .top-mirada1 a.menu {
+    font-size: 2.5em;
+    padding: 0.5rem 1.25rem; /* 8px 20px */
+    letter-spacing: 0.2em;
+  }
+
+  #inicio {
+    border-left: 1.25rem solid black; /* 20px */
+    border-right: 1.25rem solid black;
+  }
+
+  #Fondo .texto-superpuesto {
+    font-size: smaller;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 1.25rem; /* 20px */
+    text-align: center;
+  }
+}
+
+/* Pantallas medianas (hasta 1024px) */
+@media (max-width: 64rem) { /* 1024px */
+  nav {
+    font-size: 1.375rem; /* 22px */
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  .intro p {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .intro span {
+    font-size: 1.875rem; /* 30px */
+  }
+
+  #Fondo {
+    overflow: hidden;
+  }
+}
+
+/* Pantallas medianas (hasta 768px) */
+@media (max-width: 48rem) { /* 768px */
+  .paisaje1 a.menu,
+  .animales1 a.menu,
+  .historia1 a.menu,
+  .top-mirada1 a.menu,
+  .contacto1 a.menu {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+@media (max-width: 64rem) { /* 1024px */
+  #inicio .inicio1 {
+    display: none;
+  }
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 25rem; /* 400px */
+  margin: 1.25rem auto; /* 20px */
+  padding: 1.25rem; /* 20px */
+  background-color: black; 
+}
+
+form label {
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  color: rgb(225, 218, 218); 
+}
+
+form input,
+form select {
+  padding: 0.5rem; /* 8px */
+  margin-bottom: 1rem; /* 16px */
+  border: 1px solid black;
+  border-radius: 0.3125rem; /* 5px */
+  font-size: 0.95rem;
+  font-family: 'Playfair Display', serif;
+  color: black;
+}
+
+form button {
+  padding: 0.625rem 1rem; /* 10px 16px */
+  background-color: rgb(225, 218, 218); 
+  color: black;
+  border: none;
+  border-radius: 0.3125rem; /* 5px */
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  align-self: center;
+}
+
+form button:hover {
+  background-color: rgb(165, 158, 158);
+}
+
+@media (max-width: 37.5rem) {  /* 600px */
+  form {
+    width: 90%;
+    padding: 0.9375rem; /* 15px */
+  }
+
+  form label,
+  form input,
+  form select,
+  form button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 37.5rem) {  /* Top Miradas responsive */
+  .texto {
+    font-size: 1rem; /* 16px */
+    max-width: 9.375rem; /* 150px */
+    padding: 0.25rem; /* 4px */
+  }
+
+  .foto1 {
+    top: 0.5%;
+    left: 1%;
+  }
+
+  .foto2 {
+    top: 37%;
+    right: 1%;
+  }
+
+  .foto3 {
+    bottom: 1.0625rem; /* 17px */
+    left: 1rem; /* 16px */
+    transform: translateX(-50%);
+  }
+}
