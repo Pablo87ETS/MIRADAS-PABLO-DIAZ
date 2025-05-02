@@ -477,22 +477,14 @@ nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado
   }
 
   .intro {
-    font-size: 1rem;            /* Ajusta el tamaño de la fuente */
-    line-height: 1.6;           /* Mantiene la altura de línea */
+    font-size: 1rem;  /* Ajusta el tamaño de la fuente */
+    line-height: 1.6; /* Mantiene la altura de línea */
     overflow-wrap: break-word;  /* Permite que el texto largo se divida */
     word-break: break-word;     /* Fuerza el salto de línea cuando sea necesario */
     hyphens: none;              /* Desactiva la hifenización */
     padding: 1rem;              /* Ajusta el padding para no quedar pegado */
     width: 100%;                /* Asegura que el contenido ocupe el 100% del ancho */
     margin: 0 auto;             /* Centra el contenido */
-  }
-  
-  .intro p, .intro span {
-    display: block;             /* Asegura que el texto se muestre como bloque */
-    width: 100%;                /* Ajusta el ancho al 100% */
-    font-size: 1rem;            /* Ajusta el tamaño de la fuente */
-    text-align: justify;        /* Justifica el texto */
-    word-wrap: break-word;      /* Permite saltos de línea en palabras largas */
   }
 
   .paisaje1 a.menu,
@@ -512,11 +504,48 @@ nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado
   #Fondo .texto-superpuesto {
     font-size: smaller;
     position: relative;
-    top: auto;
-    left: auto;
     transform: none;
     margin-top: 1.25rem; /* 20px */
     text-align: center;
+  }
+
+  /* Top Miradas responsive */
+  .texto {
+    font-size: 1rem; /* 16px */
+    max-width: 9.375rem; /* 150px */
+    padding: 0.25rem; /* 4px */
+  }
+
+  .foto1 {
+    top: 0.5%;
+    left: 1%;
+  }
+
+  .foto2 {
+    top: 37%;
+    right: 1%;
+  }
+
+  .foto3 {
+    bottom: 1.0625rem; /* 17px */
+    left: 5rem; /* 16px */
+    transform: translateX(-50%);
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: visible; /* ← MUY IMPORTANTE: permite que las imágenes no se recorten */
+  }
+  
+  .galeria-grid img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: auto;
+    object-fit: contain; /* ← Mostramos la imagen entera sin recortes */
+    display: block;
+    margin: 1rem auto; /* Centra cada imagen con espacio alrededor */
   }
 }
 
@@ -552,12 +581,6 @@ nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado
   .top-mirada1 a.menu,
   .contacto1 a.menu {
     font-size: 1.875rem; /* 30px */
-  }
-}
-
-@media (max-width: 64rem) { /* 1024px */
-  #inicio .inicio1 {
-    display: none;
   }
 }
 
@@ -616,48 +639,5 @@ form button:hover {
   form select,
   form button {
     font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 37.5rem) {  /* Top Miradas responsive */
-  .texto {
-    font-size: 1rem; /* 16px */
-    max-width: 9.375rem; /* 150px */
-    padding: 0.25rem; /* 4px */
-  }
-
-  .foto1 {
-    top: 0.5%;
-    left: 1%;
-  }
-
-  .foto2 {
-    top: 37%;
-    right: 1%;
-  }
-
-  .foto3 {
-    bottom: 1.0625rem; /* 17px */
-    left: 5rem; /* 16px */
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 37.5rem) {
-  .galeria-grid {
-    grid-template-columns: 1fr;
-    padding: 0;
-    margin: 0 auto;
-    max-width: 100%;
-    overflow: visible; /* ← MUY IMPORTANTE: permite que las imágenes no se recorten */
-  }
-  
-  .galeria-grid img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain; /* ← Mostramos la imagen entera sin recortes */
-    display: block;
-    margin: 1rem auto; /* Centra cada imagen con espacio alrededor */
   }
 }
