@@ -650,11 +650,10 @@ form button:hover {
   }
 
   .galeria-grid img {
-    width: auto;               /* No forzamos el ancho completo */
-    max-width: 90%;            /* Se adapta a la pantalla sin pasarse */
-    max-height: 80vh;          /* Que no ocupe más del 80% de la altura visible */
-    object-fit: contain;       /* Muestra la imagen completa sin recortes */
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* NO recorta la imagen */
     display: block;
-    margin: 0 auto;            /* Centrada horizontalmente */
+    margin: 0 auto;
   }
 }
