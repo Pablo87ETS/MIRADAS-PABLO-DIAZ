@@ -645,15 +645,19 @@ form button:hover {
 
 @media (max-width: 37.5rem) {
   .galeria-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
-    gap: 1rem; /* Espacio entre imágenes */
-  }
-
-  .galeria-grid img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* NO recorta la imagen */
-    display: block;
+    grid-template-columns: 1fr;
+    padding: 0;
     margin: 0 auto;
+    max-width: 100%;
+    overflow: visible; /* ← MUY IMPORTANTE: permite que las imágenes no se recorten */
+  }
+  
+  .galeria-grid img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* ← Mostramos la imagen entera sin recortes */
+    display: block;
+    margin: 1rem auto; /* Centra cada imagen con espacio alrededor */
   }
 }
