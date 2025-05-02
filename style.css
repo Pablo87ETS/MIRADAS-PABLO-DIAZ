@@ -533,11 +533,15 @@ nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado
   }
 
   .galeria-grid {
+    display: grid;
     grid-template-columns: 1fr;
     padding: 0;
-    margin: 0 auto;
-    max-width: 100%;
-    overflow: visible; /* ← MUY IMPORTANTE: permite que las imágenes no se recorten */
+    margin: 0;
+    width: 100vw;            /* ← Usa todo el ancho real de la ventana */
+    max-width: none;         /* ← Elimina la restricción de 100% */
+    overflow-x: hidden;      /* ← Oculta cualquier posible desplazamiento horizontal */
+    overflow-y: visible;     /* ← Permite que las imágenes crezcan en altura si lo necesitan */
+    box-sizing: border-box;  /* ← Asegura que padding no afecte el tamaño real */
   }
   
   .galeria-grid img {
@@ -547,6 +551,14 @@ nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado
     display: block;
     margin: 1rem auto; /* Centra cada imagen con espacio alrededor */
   }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
 }
 
 /* Pantallas medianas (hasta 1024px) */
@@ -570,6 +582,10 @@ nav a.menu:focus { /* Para mejorar la accesibilidad y la navegación con teclado
 
   #Fondo {
     overflow: hidden;
+  }
+
+  #inicio .inicio1 {
+    display: none; /* Se mantiene oculta la sección en pantallas medianas */
   }
 }
 
